@@ -21,7 +21,7 @@ npm run preview   # preview the production build
 | Photos | `src/config/images.ts` |
 | Page title, description, structured data | `index.html` |
 
-- **Photos.** Every image slot has designed fallback art, so it never shows a broken image. The snooker visuals (hero, The Table, The Crew) are illustrated in SVG until real photos are added. The café slots use stock coffee and food photos. For the best result, put real venue photos in `public/photos/` and reference them as `'./photos/your-file.jpg'`.
+- **Photos.** The hero, The Table and The Crew use AI-generated mood images in `public/photos/`. They are not photos of the actual venue, so replace them with real venue photos when you can, keeping the same file names or updating `src/config/images.ts`. The café slots use stock coffee and food photos. Every image slot also has designed fallback art, so a broken image never shows.
 - **No invented details.** There are no prices, menu items, table counts or opening hours beyond the listed 1:00 AM closing time. Add them only once they're confirmed.
 - **Instagram.** The icon appears in the footer only after you add a verified URL to `links.instagram`.
 - **Structured data.** If you change the phone number or address, update the JSON-LD block in `index.html` too.
