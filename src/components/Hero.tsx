@@ -66,7 +66,7 @@ export default function Hero() {
   return (
     <section ref={ref} id="home" aria-labelledby="hero-title" className="relative isolate flex min-h-[640px] items-end overflow-hidden bg-ink pb-16 pt-28 sm:pb-20 lg:min-h-[100svh] lg:items-center lg:pb-24" style={{ minHeight: '100svh' }}>
       {/* Background: cinematic zoom-in on load, then a very slow drift */}
-      <motion.div className="absolute inset-y-0 left-0 right-0 -z-20 lg:left-[24%] lg:-right-[4%] lg:[mask-image:linear-gradient(to_right,transparent,black_30%)]" style={{ y: bgY }}>
+      <motion.div className={`absolute inset-0 -z-20 ${hasPhoto ? '' : 'lg:left-[24%] lg:-right-[4%] lg:[mask-image:linear-gradient(to_right,transparent,black_30%)]'}`} style={{ y: bgY }}>
         <motion.div
           className="absolute inset-0"
           initial={reduce ? false : { scale: 1.18, opacity: 0 }}
@@ -77,9 +77,11 @@ export default function Hero() {
             {hasPhoto ? (
               <SmartImage
                 src={images.hero}
-                alt="Snooker table with cue and balls under low overhead light"
+                alt="Cue lined up behind the white ball on green felt under low overhead light"
                 priority
+                sizes="100vw"
                 className="h-full w-full"
+                imgClassName="object-[72%_50%] lg:object-center"
                 fallback={<SnookerScene className="h-full w-full" align="xMidYMax slice" />}
               />
             ) : (
